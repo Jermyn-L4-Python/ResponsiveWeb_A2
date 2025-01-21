@@ -1,0 +1,266 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #151515;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #800020;
+    padding: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
+}
+
+header h1{
+    text-shadow: rebeccapurple 0 0 10px;
+    font-size: 2.5em;
+    text-shadow: 0 0 5px #fff;
+    transition: 0.3s ease;
+}
+
+header h1:hover{
+    text-shadow: 0 0 10px #fff; 
+}
+
+
+#searchsize{
+    width: 300px;
+    padding: 15px;
+    font-size: 1em;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    border: white 1px solid;
+    color: #fff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: 0.3s ease;
+}
+
+#searchsize:hover{
+    box-shadow: 0 0 10px #fff;
+}
+
+.container{
+    margin-top: 20px;
+}
+
+.container h1{
+    font-size: 2.5em;
+    font-family: "Rubik", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: italic;
+    text-align: left;
+    padding: 1em;
+    color: white;
+}
+
+.card {
+    width: clamp(150px, 95vw, 250px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+    overflow: hidden;
+    color: #fff;
+    cursor: pointer;
+    border-radius: .5rem;
+    position: relative;
+}
+.card .img {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    transition: 200ms ease-in-out transform;
+}
+
+.card .img::before{
+    content:'';
+    position: absolute;
+    bottom: -180px;
+    width: 100%;
+    height: 90%;
+    background: linear-gradient(0deg, #800020 50%, transparent);
+    transition: 0.5s;
+    z-index: 1;
+}
+
+.card:hover .img::before{
+    bottom: 0px;
+}
+
+
+.card .img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.card:hover .img img {
+    transform: translateY(-50px);
+    filter: blur(5px);
+}
+
+.card .info {
+    font-family: "Rubik", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    position: absolute;
+    bottom: 10px;  
+    left: 10px;    
+    right: 10px;   
+    padding: 10px;
+    opacity: 0;  /* Initially hidden */
+    visibility: hidden;  /* Initially hidden */
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 2;
+}
+
+.card:hover .info {
+    opacity: 1;  /* Make visible on hover */
+    visibility: visible;  /* Ensure visibility on hover */
+}
+
+
+.card .info h2{
+    margin: 5px 0 10px 0px;
+    font-size: 1.5em;
+    text-align: left;
+    color: #fff;
+}
+
+.single-info{
+    margin: 5px 0;
+    font-size: 1em;
+    text-align: left;
+    color: #fff;
+}
+
+.movies-grid {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.movies-container {
+    padding: 1rem;
+    text-align: center;
+    color: #fff;
+}
+
+.heart-icon{
+    font-size: 20px;
+}
+
+.change-color { color: #ff0000; }
+
+.footer_container{
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #141414;
+}
+
+p{
+    text-align: center;
+    color: #fff;
+}
+.designer{
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
+    margin: 0px 5;
+    color: #fff;
+}
+
+@media only screen and (max-width: 878px) {
+
+    .card {
+        width: clamp(200px, 90vw, 300px); 
+    }
+
+    .container{
+        margin-top: 5px;
+    }
+    .container h1{
+        text-align: center;
+        font-size: 3em;
+    }
+    .card .info h2 {
+        font-size: 2em; 
+    }
+
+    .card .info {
+        padding: 15px; 
+    }
+
+    .single-info{
+        font-size: 1em;
+    }
+
+    .movies-grid {
+        gap: 1rem; 
+    }
+
+    .movies-container {
+        padding: 0.5rem; 
+    }
+
+    .heart-icon{
+        font-size: 25px;
+    }
+}
+
+@media only screen and (max-width: 672px) {
+    .container h1{
+        font-size: 2.5em;
+    }
+
+    .card {
+        width: clamp(200px, 90vw, 350px); 
+    }
+
+    .card .info h2 {
+        font-size: 2.5em; 
+    }
+
+    .card .info {
+        padding: 15px; 
+    }
+
+    .single-info{
+        font-size: 1.5em;
+    }
+
+    .movies-grid {
+        gap: 1.5rem; 
+    }
+
+    .movies-container {
+        padding: 0.5rem; 
+    }
+
+    .heart-icon{
+        font-size: 30px;
+    }
+}
+
+
+
+
